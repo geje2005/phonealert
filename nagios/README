@@ -1,0 +1,20 @@
+Setting up Nagios Notifications
+
+1. Add these to miscommands.cfg:
+	define command{
+			command_name    notify-by-phonecall
+			command_line    /usr/local/bin/notify_phonecall.py -p $CONTACTADDRESS1$ -H $HOSTALIAS$ -s $SERVICESTATE$ -S $SERVICEDESC$
+			}
+
+	define command{
+			command_name    host-notify-by-phonecall
+			command_line    /usr/local/bin/notify_phonecall.py -p $CONTACTADDRESS1$ -H $HOSTALIAS$ -s $HOSTSTATE$
+			}
+
+2. Update your contacts, adding:
+	define contact{
+			service_notification_commands   notify-by-phonecall
+			host_notification_commands      host-notify-by-phonecall
+			address1                        PHONE_NUMBER
+			}
+

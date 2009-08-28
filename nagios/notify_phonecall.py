@@ -26,5 +26,5 @@ if __name__ == '__main__':
 		strMsg = "Service %s on host %s is %s"%(options.service, strHost, options.state)
 	else:
 		strMsg = "Host %s is %s"%(strHost, options.state)
-	strURL = 'http://picnik-phonealert.appspot.com/alert?number=%s&msg=%s'%(options.phone, urllib.quote(strMsg))
+	strURL = 'http://APPID.appspot.com/alert?number=%s&msg=%s'%(options.phone, urllib.quote(strMsg))
 	urllib.urlopen(strURL)
