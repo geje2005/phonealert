@@ -48,7 +48,7 @@ class Main(webapp.RequestHandler):
 		self.response.out.write("""
 			<html>
 				<head>
-					<title>Picnik PhoneAlert</title>
+					<title>PhoneAlert</title>
 				</head>
 				<body>
 					<form action="/alert" method="post">
