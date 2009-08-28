@@ -1,0 +1,5 @@
+cron:
+- description: Check for un-delivered messages
+  url: /cron
+  schedule: every 5 minutes
+
